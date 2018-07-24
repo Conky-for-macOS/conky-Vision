@@ -5,7 +5,7 @@ set -eu
 # Dont use `sed` on mac; use gsed
 # which supports the -i parameter
 #
-brew install gnu-sed
+brew install gnu-sed gawk jq
 
 INSTALL_DIR=~/Documents/Conky   # this is the standard install dir;
                                 # the user may have changed it in
