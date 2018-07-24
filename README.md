@@ -16,13 +16,9 @@ For older versions, check the available [releases](../../releases).
 
 ### Installation
 
-You can run the `install` script, or you can do it manually:
+You can run the `install` script which automatically configures the widget so that it can be used by [ManageConky](https://github.com/Conky-for-macOS/Manage-Conky).
 
-* Install **conky**, **curl** and **jq**.
-
-* Install the [Poiret One](https://www.google.com/fonts/specimen/Poiret+One) font.
-
-* Move the `.conky-vision` folder & `.conkyrc` file into your `~` dir.
+(Install Destination is ~/Documents/Conky)
 
 **NOTE** some files/folders are hidden; unhide them. :smile:
 
