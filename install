@@ -1,25 +1,44 @@
 #!/bin/bash
 set -eu
 
-cp -r .conky-vision ~/
+#
+# Dont use `sed` on mac; use gsed
+# which supports the -i parameter
+#
+brew install gnu-sed
+
+INSTALL_DIR=~/Documents/Conky   # this is the standard install dir;
+                                # the user may have changed it in
+                                # ManageConky but we assume this is it.
+
+cp -r .conky-vision $INSTALL_DIR
+# normalize for ManageConky
+mv $INSTALL_DIR/.conky-vision $INSTALL_DIR/Conky-Vision
+
 mkdir -p ~/.cache/conky-vision
 
 read -rp 'Enter your OpenWeatherMap API key: ' api_key
 
 if [ -z "$api_key" ]; then
     read -rp 'Enter your locale (leave empty for default): ' locale
-    sed "s|template9=\"\"|template9=\"$locale\"|" .conkyrc-noweather > ~/.conkyrc
+    gsed "s|template9=\"\"|template9=\"$locale\"|" .conkyrc-noweather > ~/.conkyrc
 else
-    sed "s|template6=\"\"|template6=\"$api_key\"|" .conkyrc > .conkyrc-tmp
+    gsed "s|template6=\"\"|template6=\"$api_key\"|" .conkyrc > .conkyrc-tmp
 
     read -rp 'Enter your city id: ' city_id
-    sed -i "s|template7=\"\"|template7=\"$city_id\"|" .conkyrc-tmp
+    gsed -i "s|template7=\"\"|template7=\"$city_id\"|" .conkyrc-tmp
 
     read -rp 'Enter your unit system (default, metric, imperial): ' unit_system
-    sed -i "s|template8=\"\"|template8=\"$unit_system\"|" .conkyrc-tmp
+    gsed -i "s|template8=\"\"|template8=\"$unit_system\"|" .conkyrc-tmp
 
     read -rp 'Enter your locale (leave empty for default): ' locale
-    sed "s|template9=\"\"|template9=\"$locale\"|" .conkyrc-tmp > ~/.conkyrc
+    gsed "s|template9=\"\"|template9=\"$locale\"|" .conkyrc-tmp > ~/.conkyrc
+
+    # now that we are finished with configuring
+    # move the rc to the its actual place for macOS
+    # Also remove the `.` because ManageConky ignores
+    # files with dot.
+    mv ~/.conkyrc $INSTALL_DIR/Conky-Vision/conkyrc 
 
     rm .conkyrc-tmp
 fi
