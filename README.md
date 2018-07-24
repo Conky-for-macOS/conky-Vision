@@ -4,6 +4,8 @@ A theme for [conky](https://github.com/brndnmtthws/conky) powered by [OpenWeathe
 
 It displays the **time**, **date**, **current weather**, and **forecast** for the next 4 days.
 
+***NOTE:*** *This is a fork of the original [conky-Vision](https://github.com/zagortenay333/conky-Vision) that has been modified to work on macOS.  This would not have been possible without the contributors of the original project.*
+
 ---
 
 #### Compatibility:
