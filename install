@@ -44,4 +44,7 @@ else
     rm .conkyrc-tmp
 fi
 
+# Install preview for Manage Conky
+cp Conky-Vision.jpg $INSTALL_DIR/Conky-Vision
+
 echo 'Installation complete.'
