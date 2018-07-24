@@ -10,8 +10,6 @@ It displays the **time**, **date**, **current weather**, and **forecast** for th
 
 The latest version of this theme is on the master branch, and it supports conky `1.10.x`.
 
-For older versions, check the available [releases](../../releases).
-
 ---
 
 ### Installation
