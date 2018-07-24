@@ -64,4 +64,4 @@ Edit the `template8` variable inside the `.conkyrc` file to change the units.
 
 ---
 
-<p align="center"><img src="preview.png" id="preview"></p>
+<p align="center"><img src="Conky-Vision.jpg" id="preview"></p>
