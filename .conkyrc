@@ -3,7 +3,7 @@ conky.config = {
 -------------------------------------
 --  Generic Settings
 -------------------------------------
-background=true,
+background=false,
 update_interval=1,
 double_buffer=true,
 no_buffers=true,
