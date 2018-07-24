@@ -12,6 +12,7 @@ INSTALL_DIR=~/Documents/Conky   # this is the standard install dir;
                                 # ManageConky but we assume this is it.
 
 cp -r .conky-vision $INSTALL_DIR
+
 # normalize for ManageConky
 mv $INSTALL_DIR/.conky-vision $INSTALL_DIR/Conky-Vision
 

@@ -15,7 +15,11 @@ api_prefix="api.openweathermap.org/data/2.5/"
 appid="APPID=$1"
 id="&id=$2"
 units="&units=$3"
-lang="" ; [[ -v 4 ]] && lang="${4%%_*}" lang="&lang=$lang"
+
+#
+# for now disable lang support on macOS.
+#
+lang="" # XXX please enable me again # ; [[ -v 4 ]] && lang="${4%%_*}" lang="&lang=$lang"
 
 curl -s "${api_prefix}forecast?${appid}${id}${units}${lang}" -o "$forecast"
 curl -s "${api_prefix}weather?${appid}${id}${units}${lang}" -o "$weather"
