@@ -45,6 +45,6 @@ else
 fi
 
 # Install preview for Manage Conky
-cp Conky-Vision.jpg $INSTALL_DIR/Conky-Vision
+cp Conky-Vision.jpg $INSTALL_DIR/Conky-Vision/conkyrc.jpg
 
 echo 'Installation complete.'
